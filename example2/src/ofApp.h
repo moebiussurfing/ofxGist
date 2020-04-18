@@ -21,7 +21,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
-		void draw2();
+		//void draw2();
 		void exit();
 
 		void keyPressed(int key);
@@ -36,8 +36,25 @@ class ofApp : public ofBaseApp{
 		
 		//-
 
-        ofSoundStream soundStream;
-        
+        ofSoundStream soundStream_Input;
+		
+		ofSoundStream soundStream_Output;
+		vector <float> lAudio;
+		vector <float> rAudio;
+
+		float 	pan;
+		//int		sampleRate;
+		bool 	bNoise;
+		float 	volume;
+
+		//------------------- for the simple sine wave synthesis
+		float 	targetFrequency;
+		float 	phase;
+		float 	phaseAdder;
+		float 	phaseAdderTarget;
+
+		//-
+
 		//ofxOpenALSoundPlayer player;
 		ofxAudioFile audiofile;
 
