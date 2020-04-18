@@ -56,20 +56,25 @@ void ofApp::setup() {
 
 	//--
 
-	//input
-
 	//forum snippet
 
 	ofLogToConsole();
+
+	//-
+
+	//input
+
 	soundStream_Input.printDeviceList();
 
 	cout << "INPUT devices" << endl;
 
 	//int myDevice = 6;//wasapi
 	int myDevice = 4;//ds
+	//int myDevice = 0;//asio
 
 	//std::vector<ofSoundDevice> devices = soundStream_Input.getDeviceList(ofSoundDevice::Api::MS_WASAPI);
 	std::vector<ofSoundDevice> devices = soundStream_Input.getDeviceList(ofSoundDevice::Api::MS_DS);
+	//std::vector<ofSoundDevice> devices = soundStream_Input.getDeviceList(ofSoundDevice::Api::MS_ASIO);
 
 	ofSoundStreamSettings settings_Input;
 	settings_Input.setInDevice(devices[myDevice]);
@@ -77,6 +82,7 @@ void ofApp::setup() {
 
 	//settings_Input.setApi(ofSoundDevice::Api::MS_WASAPI);
 	settings_Input.setApi(ofSoundDevice::Api::MS_DS);
+	//settings_Input.setApi(ofSoundDevice::Api::MS_ASIO);
 
 	settings_Input.numInputChannels = 2;
 	settings_Input.numOutputChannels = 0;
@@ -95,9 +101,11 @@ void ofApp::setup() {
 
 	//int myDevice = 6;//wasapi
 	int myOutDevice = 0;//ds
+	//int myOutDevice = 0;//asio
 
 	//std::vector<ofSoundDevice> devicesOut = soundStream_Output.getDeviceList(ofSoundDevice::Api::MS_WASAPI);
 	std::vector<ofSoundDevice> devicesOut = soundStream_Output.getDeviceList(ofSoundDevice::Api::MS_DS);
+	//std::vector<ofSoundDevice> devicesOut = soundStream_Output.getDeviceList(ofSoundDevice::Api::MS_ASIO);
 
 	ofSoundStreamSettings settings_Output;
 	settings_Output.setOutDevice(devicesOut[myOutDevice]);
@@ -106,6 +114,7 @@ void ofApp::setup() {
 
 	//settings_Output.setApi(ofSoundDevice::Api::MS_WASAPI);
 	settings_Output.setApi(ofSoundDevice::Api::MS_DS);
+	//settings_Output.setApi(ofSoundDevice::Api::MS_ASIO);
 
 	settings_Output.numInputChannels = 0;
 	settings_Output.numOutputChannels = 2;
@@ -182,14 +191,14 @@ void ofApp::setup() {
 
 void ofApp::onNoteOn(GistEvent &e) {
 
-	ofLogNotice(__FUNCTION__) << "+";
+	//ofLogNotice(__FUNCTION__) << "+";
 	noteOnRadius = 100;
 };
 
 
 void ofApp::onNoteOff(GistEvent &e) {
 
-	ofLogNotice(__FUNCTION__) << "-";
+	//ofLogNotice(__FUNCTION__) << "-";
 	//noteOnRadius = 0;
 };
 
