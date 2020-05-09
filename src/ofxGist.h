@@ -13,6 +13,9 @@
  *  https://github.com/adamstark/Gist
  */
 
+ //NOTE:
+ //btw this is using [forked] master branch, not develop that uses newer gist version bc uses macOS only alternate fft. don't know how to change... Windows10 here.
+
 #ifndef _ofxGist
 #define _ofxGist
 
