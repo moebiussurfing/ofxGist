@@ -6,7 +6,7 @@
 //There are many other ways you can do that.
 //This player includes a version of kissFFT. You can remove the one included in Gist.
 //https://github.com/borg/ofxOpenALSoundPlayer
-#include "ofxOpenALSoundPlayer.h"
+//#include "ofxOpenALSoundPlayer.h"
 
 
 //Slightly modified to add a dynamic getVariable method to be able to plot based on
@@ -33,7 +33,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
         ofSoundStream soundStream;
-        ofxOpenALSoundPlayer player;
+        //ofxOpenALSoundPlayer player;
         void processAudio(float * input, int bufferSize, int nChannels);
         
         void audioIn(float * input, int bufferSize, int nChannels);
@@ -51,7 +51,7 @@ class ofApp : public ofBaseApp{
         bool isPaused;
         
         void clear();
-        void loadSong(string str);
+        //void loadSong(string str);
 
         
         vector<ofxHistoryPlot *>plots;

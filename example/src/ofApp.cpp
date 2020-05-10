@@ -16,10 +16,10 @@ void ofApp::setup(){
     
     
     
-    useMic = 1;
-    isPaused = 0;
+    //useMic = 1;
+    //isPaused = 0;
     
-    player.setLoop(true);
+    //player.setLoop(true);
     
     mfccMax = 0;
     showMFCC = 0;
@@ -72,7 +72,7 @@ void ofApp::setup(){
     soundStream.setup(this,0, 1, sampleRate, bufferSize, 1);
     
     
-    loadSong("assets/sounds/Coltrane_acc_VUIMM.wav");
+    //loadSong("assets/sounds/Coltrane_acc_VUIMM.wav");
 }
 
 
@@ -92,16 +92,16 @@ void ofApp::onNoteOff(GistEvent &e){
 void ofApp::update(){
     
     
-    if(isPaused){
-        return;
-    }
-    if(!useMic){
-        if(player.isLoaded()){
-            vector<float> output = player.getCurrentBuffer(bufferSize);
-            processAudio(&output[0], bufferSize, 2);
-            fftSmoothed = player.getFFT();
-        }
-    }
+    //if(isPaused){
+    //    return;
+    //}
+    //if(!useMic){
+    //    if(player.isLoaded()){
+    //        vector<float> output = player.getCurrentBuffer(bufferSize);
+    //        processAudio(&output[0], bufferSize, 2);
+    //        fftSmoothed = player.getFFT();
+    //    }
+    //}
     
     
     
@@ -282,19 +282,19 @@ void ofApp::clear(){
     
 }
 
-
-void ofApp::loadSong(string str){
-    
-    cout<<"loadSong "<<str<<endl;
-    
-    player.stop();
-    player.loadSound(str);
-    player.setLoop(true);
-    player.play();
-    useMic = 0;
-    mfccMax = 0;
-    gist.clearHistory();
-}
+//
+//void ofApp::loadSong(string str){
+//    
+//    cout<<"loadSong "<<str<<endl;
+//    
+//    player.stop();
+//    player.loadSound(str);
+//    player.setLoop(true);
+//    player.play();
+//    useMic = 0;
+//    mfccMax = 0;
+//    gist.clearHistory();
+//}
 
 void ofApp::processAudio(float * input, int bufferSize, int nChannels){
     //convert float array to vector
@@ -323,23 +323,23 @@ void ofApp::keyPressed(int key){
         ofToggleFullscreen();
     }
     
-    if(key =='m'){
-        useMic = !useMic;
-        
-        if(!useMic){
-            player.play();
-        }else{
-            player.stop();
-        }
-        
-        
-        gist.clearHistory();
-    }
+    //if(key =='m'){
+    //    useMic = !useMic;
+    //    
+    //    if(!useMic){
+    //        player.play();
+    //    }else{
+    //        player.stop();
+    //    }
+    //    
+    //    
+    //    gist.clearHistory();
+    //}
     
-    if(key ==' '){
-        isPaused = !isPaused;
-        player.setPaused(isPaused);
-    }
+    //if(key ==' '){
+    //    isPaused = !isPaused;
+    //    player.setPaused(isPaused);
+    //}
     
     if(key =='r'){
         gist.clearHistory();
@@ -363,9 +363,9 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-    if(!useMic){
-        player.setPosition(x/(float)ofGetWidth());
-    }
+    //if(!useMic){
+    //    player.setPosition(x/(float)ofGetWidth());
+    //}
     
     float t =  x/(float)ofGetWidth();
     gist.setThreshold(GIST_SPECTRAL_DIFFERENCE,t);
@@ -393,8 +393,8 @@ void ofApp::gotMessage(ofMessage msg){
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){
-    clear();
-    vector<string> paths = ofSplitString(dragInfo.files[0], "data/");
-    loadSong(paths[1]);
+    //clear();
+    //vector<string> paths = ofSplitString(dragInfo.files[0], "data/");
+    //loadSong(paths[1]);
 
 }

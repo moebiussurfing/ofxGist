@@ -19,11 +19,11 @@
 #include "ofMain.h"
 
 //Use Apple accelerate framework. Make sure to include
-#define USE_ACCELERATE_FFT
+//#define USE_ACCELERATE_FFT
 
 /* Use KISS Fast Fourier Transform */
 //needs to be included before Gist..also make sure there is only one kiss instance in your project
-//#define USE_KISS_FFT
+#define USE_KISS_FFT
 
 #include "Gist.h"
 
