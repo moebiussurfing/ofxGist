@@ -58,8 +58,8 @@ common:
 	
 	# when parsing the file system looking for libraries exclude this for all or
 	# a specific platform
-	# ADDON_LIBS_EXCLUDE =
-	
+	ADDON_LIBS_EXCLUDE =
+
 	# when parsing the file system looking for sources exclude this for all or
 	# a specific platform
 	
@@ -77,10 +77,20 @@ linuxarmv7l:
 	
 msys2:
 	
-
-	
 vs:
-		
+	ADDON_SOURCES_EXCLUDE = libs\Gist\src\fft\AccelerateFFT.cpp
+	ADDON_SOURCES_EXCLUDE += libs\Gist\src\fft\AccelerateFFT.h
+
+	# examples:	
+	# ADDON_INCLUDES_EXCLUDE = libs\Gist\src\fft\AccelerateFFT.h
+	# ADDON_LIBS += libs/libgit2/lib/vs/x64/git2.lib
+	# ADDON_DLLS_TO_COPY += libs/libgit2/lib/vs/x64/git2.dll
+	# ADDON_INCLUDES_EXCLUDE += libs\Gist\src\fft\%
+	# ADDON_LIBS_EXCLUDE += F:\openFrameworks\addons\ofxGist/libs\Gist\src\fft\AccelerateFFT.cpp
+	# ADDON_LIBS_EXCLUDE += F:\openFrameworks\addons\ofxGist/libs\Gist\src\fft\AccelerateFFT.h
+	# ADDON_SOURCES_EXCLUDE = F:\openFrameworks\addons\ofxGist/libs\Gist\src\fft\AccelerateFFT.cpp
+	# ADDON_SOURCES_EXCLUDE += libs\Gist\src\fft\%
+
 android/armeabi:	
 	
 android/armeabi-v7a:	
@@ -88,6 +98,5 @@ android/armeabi-v7a:
 osx:
 	ADDON_LDFLAGS = -F/Library/Frameworks -framework Accelerate
 	ADDON_INCLUDES += /Library/Frameworks/Accelerate.framework/Headers
-
     
 ios:
