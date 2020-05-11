@@ -69,7 +69,7 @@ void ofApp::setup() {
 	cout << "INPUT devices" << endl;
 
 	//int myDevice = 6;//wasapi
-	int myDevice = 4;//ds
+	int myDevice = 8;//ds
 	//int myDevice = 0;//asio
 
 	//std::vector<ofSoundDevice> devices = soundStream_Input.getDeviceList(ofSoundDevice::Api::MS_WASAPI);

@@ -1,3 +1,0 @@
-ofxAudioFile
-ofxGist
-ofxHistoryPlot
